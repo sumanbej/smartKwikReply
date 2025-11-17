@@ -1,0 +1,109 @@
+
+:root {
+  --bg-1: #f6f9ff;
+  --bg-2: #eef4ff;
+  --card: rgba(255, 255, 255, 0.75);
+  --accent: #1976d2;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
+  color: #0b1220;
+}
+
+/* Dark mode override */
+.app-root.dark {
+  --card: rgba(18, 22, 28, 0.6);
+  background: linear-gradient(135deg, #071026 0%, #0f1724 100%);
+  color: #e6eef8;
+}
+
+.topbar {
+  background: transparent;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* Card */
+.glass-card {
+  padding: 22px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.6));
+  box-shadow: 0 10px 30px rgba(14, 30, 37, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Dark card tweaks */
+.app-root.dark .glass-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Header row */
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-col {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Buttons */
+.generate-btn {
+  min-width: 120px;
+  height: 42px;
+  border-radius: 10px;
+  text-transform: none;
+  box-shadow: none;
+}
+
+/* Inputs */
+.email-input .MuiInputBase-root,
+.reply-output .MuiInputBase-root {
+  border-radius: 10px;
+}
+
+/* Typography helpers */
+.muted {
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .cta-col {
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+
+  .glass-card {
+    padding: 16px;
+  }
+}
